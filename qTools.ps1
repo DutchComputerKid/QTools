@@ -9,7 +9,7 @@ Function FileNotFound {
     break
 }
 $console = $host.ui.rawui
-$global:Version = "1.4.1"
+$global:Version = "1.4.2"
 $console.backgroundcolor = "black"
 Clear-Host
 # Gather command meta data from the original Cmdlet (in this case, Test-Path)
@@ -42,7 +42,8 @@ else {
 
 If ($(Get-WmiObject -class Win32_OperatingSystem).Caption -contains "Windows 10" -or "Server 2016") {
     Write-Host "Windows version:" (Get-WmiObject -class Win32_OperatingSystem).Caption
-}
+    }
+
 else {
     Write-Host "Your Windows version is not compatible, use Windows 10 or Server 2016.:"
     Break
